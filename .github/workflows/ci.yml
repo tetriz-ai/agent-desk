@@ -172,7 +172,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
-      # No install scripts: the app's Electron download and macOS-only native builds are not
+      # No install scripts: the app's macOS-only native builds are not
       # needed here, so the same steps run on Linux. The package's dist/ is built next.
       - run: pnpm install --frozen-lockfile --ignore-scripts
         working-directory: .

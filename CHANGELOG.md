@@ -6,6 +6,14 @@ All notable changes to this project are documented in this file. The format is b
 
 ## [Unreleased]
 
+### Security
+
+- Builds use Electron 42.11.16, which blocks the compromised eMudhra (emSign) intermediate CA keys. Electron 41 receives no such fix.
+
+### Changed
+
+- Folder-access notifications stay alive for the app launch so asynchronous clicks and failures are handled. A macOS notification the system refuses to show is now logged, since Electron 42 reports it as an event rather than an error.
+
 ## [0.1.0] - 2026-10-12
 
 ### Added

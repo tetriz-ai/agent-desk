@@ -16,6 +16,11 @@ import { existsSync } from "node:fs";
 // Developer ID, but a valid signature, which macOS needs to ask for folder access.
 const canSign = !/^(|0|false|no)$/i.test(process.env.ENABLE_CODE_SIGNING ?? "");
 
+// The electron package has no install script. Requiring it downloads the binary into
+// node_modules/electron/dist when missing, so LICENSES.chromium.html (an extraResource below)
+// exists even on a fresh install.
+require("electron");
+
 const appName = "Agent Desk";
 const bundleId = "dev.agentdesk.app";
 

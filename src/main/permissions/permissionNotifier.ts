@@ -19,16 +19,24 @@ export interface NotifierDeps {
   show: (onClick: () => void) => void;
 }
 
+// Electron delivers native events asynchronously, so the object must outlive show().
+let permissionNotification: Notification | undefined;
+
 const defaultDeps: NotifierDeps = {
   isSupported: () => Notification.isSupported(),
   show: (onClick) => {
-    const n = new Notification({
+    permissionNotification = new Notification({
       title: "Agent Desk needs folder access",
       body: "Grant access so Agent Desk can read the coding projects in your protected folders.",
       silent: false,
     });
-    n.on("click", onClick);
-    n.show();
+    permissionNotification.on("click", onClick);
+    // macOS reports a notification it will not show (an unsigned build, notifications turned
+    // off) through this event, never by throwing from show().
+    permissionNotification.on("failed", (_event, error) => {
+      logger.warn("permissions", "notification_show_failed", { error });
+    });
+    permissionNotification.show();
   },
 };
 
@@ -59,4 +67,5 @@ export function notifyPermissionMissing(
 /** Test-only: reset the once-per-launch guard. Do NOT call from production. */
 export function __resetNotifierForTests(): void {
   notifiedThisLaunch = false;
+  permissionNotification = undefined;
 }

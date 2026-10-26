@@ -53,6 +53,6 @@ and every build carries that folder in the app's Resources:
 - Tailwind CSS 4.1.18 (its generated stylesheet), MIT,
   https://github.com/tailwindlabs/tailwindcss; Vite 7.3.5 (its module-preload
   helper), MIT, https://github.com/vitejs/vite.
-- Electron 41.10.7, MIT, https://github.com/electron/electron, with Chromium
+- Electron 42.11.16, MIT, https://github.com/electron/electron, with Chromium
   and the other components listed in LICENSES.chromium.html, which every build
   carries beside this file.

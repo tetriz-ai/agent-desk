@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: "24"
           cache: pnpm
-      # No install scripts: the app's Electron download and macOS-only builds are not needed here.
+      # No install scripts: the app's macOS-only builds are not needed here.
       - run: pnpm install --frozen-lockfile --ignore-scripts
       # The tape packs this checkout and installs that .tgz for the quick start's release URL.
       - run: pnpm build

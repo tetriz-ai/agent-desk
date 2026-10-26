@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: "24"
           cache: pnpm
-      # No install scripts: the app's Electron download and macOS-only builds are not needed here.
+      # No install scripts: the app's macOS-only builds are not needed here.
       # The tape's hidden setup builds the package itself.
       - run: pnpm install --frozen-lockfile --ignore-scripts
       # With no path the action only installs vhs; the tape runs from the package folder.

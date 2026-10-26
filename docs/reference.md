@@ -51,7 +51,7 @@ macOS protects your Desktop, Documents and Downloads folders, and asks before th
 
 The app is at v0.1.0 and follows semantic versioning. A breaking change is one that removes a page, changes the format of `sessions.db` or `harness-inventory.json`, or drops a tool it reads. Before 1.0, the pages, the files the app keeps and the tools it reads may change in a minor release.
 
-Node 24 builds and packages the app, and the unit tests also run on Node 26. The app itself runs on the Node inside Electron 41.
+Node 24 builds and packages the app, and the unit tests also run on Node 26. The app itself runs on the Node inside Electron 42.
 
 ## Tests
 

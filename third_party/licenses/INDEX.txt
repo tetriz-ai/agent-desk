@@ -4,7 +4,7 @@ Third-party software bundled in Agent Desk builds.
 @fontsource/geist-mono 5.2.7: OFL-1.1
 class-variance-authority 0.7.1: Apache-2.0
 clsx 2.1.1: MIT
-electron 41.10.7: MIT
+electron 42.11.16: MIT
 react 19.2.4: MIT
 react-dom 19.2.4: MIT
 scheduler 0.27.0: MIT
